@@ -10,11 +10,13 @@ import (
 )
 
 type FiscalDate struct {
-    ID          string    `json:"id"`
-    Date        time.Time `json:"date"`
-    Title       string    `json:"title"`
-    Description string    `json:"description"`
-    Category    string    `json:"category"`
+    ID           string    `json:"id"`
+    Date         time.Time `json:"date"`
+    Title        string    `json:"title"`
+    Description  string    `json:"description"`
+    Category     string    `json:"category"`
+    PaymentDate  time.Time `json:"paymentDate"`
+    PaymentInfo  string    `json:"paymentInfo"`
 }
 
 var fiscalDates = []FiscalDate{
@@ -24,6 +26,8 @@ var fiscalDates = []FiscalDate{
         Title:       "IRS - Declaração Mensal de Remunerações",
         Description: "Entrega da Declaração Mensal de Remunerações",
         Category:    "IRS",
+        PaymentDate: time.Date(2024, 2, 20, 0, 0, 0, 0, time.UTC),
+        PaymentInfo: "Pagamento até dia 20 do mês seguinte",
     },
     // Add more dates here
 }
